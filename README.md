@@ -23,4 +23,7 @@ Sudoku Solver Project using Bakctracking Algorithm
    Fill the entire board with numbers in every sqaure, without repeating any numbers in the same row, column, and sub sqaure.
    This makes the entire board valid/solved.
    
-   
+   # Objectives left to do
+   [ ] - Create GUI
+   [ ] - Make sudoku board interactive rather than static 
+   [ ] - Give out put whether board is valid or unsolvable
