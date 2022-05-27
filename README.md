@@ -2,9 +2,9 @@
 Sudoku Solver Project using Bakctracking Algorithm
 
  ## Approach
-  - Decide 
-  - Constraints
-  - Goal
+    - Decide 
+    - Constraints
+    - Goal
 
   **Sudoku** is a 9 x 9 sqaure grid, where each square sub divides into another 9 squares.
   To win and create a valid board, you must place a number 1 - 9 in each individual square.
@@ -24,6 +24,6 @@ Sudoku Solver Project using Bakctracking Algorithm
    This makes the entire board valid/solved.
    
    # Objectives left to do
-   [ ] - Create GUI
-   [ ] - Make sudoku board interactive rather than static 
-   [ ] - Give out put whether board is valid or unsolvable
+    - Create GUI
+    - Make sudoku board interactive rather than static 
+    - Give out put whether board is valid or unsolvable
