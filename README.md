@@ -27,3 +27,4 @@ Sudoku Solver Project using Bakctracking Algorithm
     - Create GUI
     - Make sudoku board interactive rather than static 
     - Give out put whether board is valid or unsolvable
+    - Explain my backtracking approuch in the README.md
