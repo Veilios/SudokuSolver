@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import "./App.scss";
 
 const App = () => {
+
   return (
     <>
       <h1>Sudoku Solver</h1>
@@ -118,6 +119,7 @@ const App = () => {
         </div>
 
       </div>
+
     </>
   )
 }
