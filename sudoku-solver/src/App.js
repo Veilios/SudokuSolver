@@ -37,6 +37,10 @@ const App = () => {
       <h1>Sudoku Solver</h1>
 
       <SudokuBoard sudoku={sudoku} />
+
+      <button onClick={() => setSudoku(generateSudoku())} >New board</button>
+      <button>Verify board</button>
+      <button>Solve</button>
     </div>
   )
 };
