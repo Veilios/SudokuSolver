@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import generator from "sudoku";
+import produce from 'immer';
+
 import SudokuBoard from "./components/SudokuBoard";
 
 import "./App.scss";
@@ -34,11 +36,20 @@ const App = () => {
 
   const [sudoku, setSudoku] = useState(generateSudoku())
 
+  const handleChange = (e) => {
+    console.log(sudoku.rows[1].cols[1].value)
+    setSudoku(
+      produce((state) => {
+        sudoku.rows[e.row].cols[e.col].value = e.value
+      })
+    )
+  };
+
   return (
     <div className='App' >
       <h1>Sudoku Solver</h1>
 
-      <SudokuBoard sudoku={sudoku} />
+      <SudokuBoard sudoku={sudoku} onChange={handleChange} />
 
       <button onClick={() => setSudoku(generateSudoku())} >New board</button>
       <button>Verify board</button>
