@@ -1,5 +1,5 @@
 import React from 'react';
-import SudokuField from './SudokuField';
+import SudokuCell from './SudokuCell';
 
 import "./Sudoku.scss";
 
@@ -8,8 +8,8 @@ const SudokuBoard = (props) => {
         <div className='board' >
             {props.sudoku.rows.map(row => (
                 <div className='row' key={row.index} >
-                    {row.cols.map(field => (
-                        <SudokuField className="cell" field={field} key={field.col} />
+                    {row.cols.map(cell => (
+                        <SudokuCell className="cell" cell={cell} key={cell.col} />
                     ))}
                 </div>
             ))}
