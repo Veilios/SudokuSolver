@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import generator from "sudoku";
 import "./App.scss";
+import SudokuBoard from "./components/SudokuBoard";
 
 
 const generateSudoku = () => {
@@ -34,6 +35,8 @@ const App = () => {
   return (
     <div className='App' >
       <h1>Sudoku Solver</h1>
+
+      <SudokuBoard sudoku={sudoku} />
     </div>
   )
 };
