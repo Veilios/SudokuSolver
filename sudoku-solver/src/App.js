@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import generator from "sudoku";
-import "./App.scss";
 import SudokuBoard from "./components/SudokuBoard";
+
+import "./App.scss";
+
 
 
 const generateSudoku = () => {
