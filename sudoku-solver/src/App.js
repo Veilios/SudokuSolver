@@ -1,32 +1,24 @@
-import React, { useState } from "react";
-import generator from "sudoku";
+import React from "react";
 
 import SudokuBoard from "./components/SudokuBoard";
 
 import "./App.scss";
 
 
-const App = () => {
+const App = (props) => {
 
 
-  const handleChange = (e) => {
-    console.log(sudoku.rows[1].cols[1].value)
-    setSudoku(
-      produce((state) => {
-        state.sudoku.rows[e.row].cols[e.col].value = e.value
-      })
-    )
-  };
+  // const handleChange = (e) => {
+  //   console.log(sudoku.rows[1].cols[1].value)
+  // };
 
   return (
     <div className='App' >
       <h1>Sudoku Solver</h1>
+      {console.log(props)}
+      <SudokuBoard />
 
-      <UserContext.Provider value={{ sudoku, handleChange }} >
-        <SudokuBoard />
-      </UserContext.Provider>
-
-      <button onClick={() => setSudoku(generateSudoku())} >New board</button>
+      <button onClick={() => console.log("hello")} >New board</button>
       <button>Verify board</button>
       <button>Solve</button>
     </div>
