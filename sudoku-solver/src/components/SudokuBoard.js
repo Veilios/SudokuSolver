@@ -9,7 +9,7 @@ const SudokuBoard = (props) => {
             {props.sudoku.rows.map(row => (
                 <div className='row' key={row.index} >
                     {row.cols.map(cell => (
-                        <SudokuCell className="cell" cell={cell} key={cell.col} />
+                        <SudokuCell className="cell" cell={cell} key={cell.col} onChange={props.onChange} />
                     ))}
                 </div>
             ))}
