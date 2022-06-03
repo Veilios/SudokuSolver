@@ -1,4 +1,4 @@
-.field {
+.cell {
     width: 3rem;
     height: 3rem;
     text-align: center;
@@ -8,6 +8,6 @@
     color: #555;
 }
 
-.field[readonly] {
+.cell[readonly] {
     color: black;
 }
