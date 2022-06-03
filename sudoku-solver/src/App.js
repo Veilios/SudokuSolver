@@ -40,7 +40,7 @@ const App = () => {
     console.log(sudoku.rows[1].cols[1].value)
     setSudoku(
       produce((state) => {
-        sudoku.rows[e.row].cols[e.col].value = e.value
+        state.sudoku.rows[e.row].cols[e.col].value = e.value
       })
     )
   };
