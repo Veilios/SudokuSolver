@@ -1,6 +1,7 @@
 import React from "react";
 
 import SudokuBoard from "./components/SudokuBoard";
+import { SudokuProvider } from "./context/SudokuContext";
 
 import "./App.scss";
 
@@ -13,15 +14,17 @@ const App = (props) => {
   // };
 
   return (
-    <div className='App' >
-      <h1>Sudoku Solver</h1>
-      {console.log(props)}
-      <SudokuBoard />
+    <SudokuProvider>
+      <div className='App' >
+        <h1>Sudoku Solver</h1>
+        {console.log(props)}
+        <SudokuBoard />
 
-      <button onClick={() => console.log("hello")} >New board</button>
-      <button>Verify board</button>
-      <button>Solve</button>
-    </div>
+        <button onClick={() => console.log("hello")} >New board</button>
+        <button>Verify board</button>
+        <button>Solve</button>
+      </div>
+    </SudokuProvider>
   )
 };
 

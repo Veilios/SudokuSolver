@@ -27,8 +27,8 @@ const generateSudoku = () => {
     return result;
 };
 
-const SudokuReducer = ( state, action ) => {
-    switch(action.type) {
+const SudokuReducer = (state, action) => {
+    switch (action.type) {
         default:
             return state;
     }
@@ -42,7 +42,7 @@ const initialState = {
 export const SudokuContext = createContext()
 
 
-export const SudokuProvider = ( props ) => {
+export const SudokuProvider = (props) => {
     const [state, dispatch] = useReducer(SudokuReducer, initialState);
 
     return (
