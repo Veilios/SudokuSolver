@@ -29,6 +29,10 @@ const generateSudoku = () => {
 
 const SudokuReducer = (state, action) => {
     switch (action.type) {
+        case "FILL_CELL": 
+            return {
+                sudoku: action.payload
+            }
         default:
             return state;
     }

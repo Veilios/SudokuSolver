@@ -17,7 +17,6 @@ const App = (props) => {
     <SudokuProvider>
       <div className='App' >
         <h1>Sudoku Solver</h1>
-        {console.log(props)}
         <SudokuBoard />
 
         <button onClick={() => console.log("hello")} >New board</button>

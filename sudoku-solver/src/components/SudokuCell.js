@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SudokuContext } from '../context/SudokuContext';
 
 import "./Sudoku.scss";
 
 const SudokuCell = (props) => {
+    const { dispatch, sudoku } = useContext(SudokuContext);
+    
 
-    const handleChange = (e) => {
-        const value = "" ? "" : parseInt(e.target.value, 10);
+    const handleChange = (e) => {   
+        const newBoard = sudoku
 
-        props.onChange({...props.field, value: value })
+        newBoard.rows[props.cell.row].cols[props.cell.col].value = e.target.value;
+
+        dispatch({
+            type: "FILL_CELL",
+            payload: newBoard
+        })
+
+        console.log("state update: ", sudoku);
     };
 
     return (
         <input
             className='cell'
-            value={props.cell.value || ""}
+            value={props.cell.value === null ? "" : props.cell.value}
             readOnly={props.cell.readonly}
             onChange={handleChange}
         />
