@@ -1,9 +1,7 @@
-import React, { useState, createContext } from "react";
+import React, { createContext, useReducer } from "react";
 
 import generator from "sudoku";
 
-
-const SudokuContext = createContext()
 
 const generateSudoku = () => {
     const raw = generator.makepuzzle();
@@ -29,16 +27,31 @@ const generateSudoku = () => {
     return result;
 };
 
-
-const SudokuProvider = ({ children }) => {
-    const [sudoku, setSudoku] = useState(generateSudoku());
-
-    return (
-        <SudokuContext.Provider value={{ sudoku, generateSudoku }} >
-            {children}
-        </SudokuContext.Provider>
-    );
+const SudokuReducer = ( state, action ) => {
+    switch(action.type) {
+        default:
+            return state;
+    }
 };
 
+const initialState = {
+    sudoku: generateSudoku(),
+    solved: false
+};
 
-export { SudokuProvider };  
+export const SudokuContext = createContext()
+
+
+export const SudokuProvider = ( props ) => {
+    const [state, dispatch] = useReducer(SudokuReducer, initialState);
+
+    return (
+        <SudokuContext.Provider value={{
+            sudoku: state.sudoku,
+            solved: state.solved,
+            dispatch,
+        }} >
+            {props.children}
+        </SudokuContext.Provider>
+    )
+};
