@@ -3,7 +3,45 @@ import React, { createContext, useReducer } from "react";
 import generator from "sudoku";
 
 
-const generateSudoku = () => {
+// useEffect(() => {
+
+//     const nBoard = generator.makepuzzle();
+//     const apiSolution = generator.solvepuzzle(nBoard);
+//     const sBoard = [];
+
+//     for (let i = 0; i < nBoard.length; i++) {
+//         if (nBoard[i] === null) {
+//             nBoard[i] = 0;
+//         } else {
+//             nBoard[i] = nBoard[i] + 1;
+//         }
+//     };
+
+//     const Seperator = (items, size) => {
+//         items = [].concat(...items);
+
+//         while (items.length) {
+//             sBoard.push(
+//                 items.splice(0, size)
+//             );
+//         };
+
+//         return sBoard;
+//     };
+
+//     Seperator(nBoard, 9);
+//     console.log("generated board", nBoard);
+//     console.log("organized board", sBoard);
+
+
+//     console.log("api solution solver", apiSolution);
+//     console.log("Backtracking Method of solving", Solve(sBoard));
+
+
+// }, []);
+
+
+export const generateSudoku = () => {
     const raw = generator.makepuzzle();
     const result = { rows: [] };
 
@@ -29,7 +67,11 @@ const generateSudoku = () => {
 
 const SudokuReducer = (state, action) => {
     switch (action.type) {
-        case "FILL_CELL": 
+        case "FILL_CELL":
+            return {
+                sudoku: action.payload
+            }
+        case "NEW_BOARD":
             return {
                 sudoku: action.payload
             }
