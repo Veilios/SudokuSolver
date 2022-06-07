@@ -1,14 +1,15 @@
-import { findEmpty } from "./FindEmpty";
+import { FindEmpty } from "./FindEmpty";
 import { Valid } from "./Valid";
 
 
 export const Solve = (board) => {
-    find = findEmpty(board);
+    const finding = FindEmpty(board);
+    let [row, col] = []
 
-    if (!find) {
+    if (!finding) {
         return true;
     } else {
-        row, col = find;
+       [row, col] = finding;
     };
 
     for (let i = 0; i < 9; i++) {

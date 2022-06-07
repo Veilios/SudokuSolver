@@ -6,6 +6,7 @@ import { SudokuProvider } from "./context/SudokuContext";
 import generator from "sudoku";
 
 import "./App.scss";
+import { Solve } from "./hooks/Solve";
 
 
 const App = (props) => {
@@ -13,6 +14,7 @@ const App = (props) => {
   useEffect(() => {
   
     const nBoard = generator.makepuzzle();
+    const apiSolution = generator.solvepuzzle(nBoard);
 
     const Seperator = (items, size) => {
       const sBoard = [];
@@ -29,6 +31,10 @@ const App = (props) => {
 
     console.log("generated board", nBoard);
     console.log("organized board", Seperator(nBoard, 9));
+
+    console.log("api solution solver", apiSolution);
+    console.log("backtracking solve", Solve(Seperator(nBoard, 9)))
+    
 
 
   }, []);
