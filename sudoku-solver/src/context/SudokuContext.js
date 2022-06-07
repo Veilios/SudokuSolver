@@ -14,7 +14,7 @@ const generateSudoku = () => {
             const col = {
                 row: i,
                 col: j,
-                value: value,
+                value: value === null ? "" : value + 1,
                 readonly: value !== null
             };
 

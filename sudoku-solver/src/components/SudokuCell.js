@@ -23,7 +23,7 @@ const SudokuCell = (props) => {
     return (
         <input
             className='cell'
-            value={props.cell.value === null ? "" : props.cell.value}
+            value={props.cell.value}
             readOnly={props.cell.readonly}
             onChange={handleChange}
         />
