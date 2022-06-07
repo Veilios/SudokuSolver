@@ -16,8 +16,6 @@ const SudokuCell = (props) => {
             type: "FILL_CELL",
             payload: newBoard
         })
-
-        console.log("state update: ", sudoku);
     };
 
     return (

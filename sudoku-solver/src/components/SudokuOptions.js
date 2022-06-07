@@ -13,15 +13,12 @@ const SudokuOptions = () => {
             type: "NEW_BOARD",
             payload: n
         })
-
-        console.log("new board created");
     };
 
     return (
         <div className='Options' >
             <button onClick={() => newBoard()} >New board</button>
-            <button>Verify board</button>
-            <button>Solve</button>
+            <button>Solve with Backtracking</button>
         </div>
     )
 };
