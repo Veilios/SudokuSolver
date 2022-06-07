@@ -24,7 +24,7 @@ Sudoku Solver Project using Bakctracking Algorithm
    This makes the entire board valid/solved.
    
    # Objectives left to do
-    - Create GUI
-    - Make sudoku board interactive rather than static 
     - Give out put whether board is valid or unsolvable
     - Explain my backtracking approuch in the README.md
+    - Change state saved sudoku to new sudoku approuch
+    - have solve method save to state, so to see the backtracking method work live on page  
