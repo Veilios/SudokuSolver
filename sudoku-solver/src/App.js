@@ -15,9 +15,17 @@ const App = (props) => {
   
     const nBoard = generator.makepuzzle();
     const apiSolution = generator.solvepuzzle(nBoard);
+    const sBoard = [];
 
+    for (let i = 0; i < nBoard.length; i++) {
+      if (nBoard[i] === null) {
+        nBoard[i] = 0;
+      } else {
+        nBoard[i] = nBoard[i] + 1;
+      }
+    };
+    
     const Seperator = (items, size) => {
-      const sBoard = [];
       items = [].concat(...items);
 
       while (items.length) {
@@ -29,12 +37,13 @@ const App = (props) => {
       return sBoard;
     };
 
+    Seperator(nBoard, 9);
     console.log("generated board", nBoard);
-    console.log("organized board", Seperator(nBoard, 9));
+    console.log("organized board", sBoard);
 
-    console.log("api solution solver", apiSolution);
-    console.log("backtracking solve", Solve(Seperator(nBoard, 9)))
     
+    console.log("api solution solver", apiSolution);
+    console.log("Backtracking Method of solving", Solve(sBoard));
 
 
   }, []);

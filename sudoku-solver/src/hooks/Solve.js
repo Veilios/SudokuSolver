@@ -1,28 +1,26 @@
+import { CheckValue } from "./Check/CheckValue";
 import { FindEmpty } from "./FindEmpty";
-import { Valid } from "./Valid";
-
 
 export const Solve = (board) => {
-    const finding = FindEmpty(board);
-    let [row, col] = []
+    let emptySpot = FindEmpty(board);
+    let row = emptySpot[0];
+    let col = emptySpot[1];
 
-    if (!finding) {
-        return true;
-    } else {
-       [row, col] = finding;
-    };
+    // there is no more empty spots
+    if (row === -1) {
+        return board;
+    }
 
-    for (let i = 0; i < 9; i++) {
-        if (Valid(board, i, (row, col))) {
-            board[row][col] = i;
-
-            if (Solve(board)) {
-                return true;
-            }
-
-            board[row][col] = 0;
+    for (let num = 1; num <= 9; num++) {
+        if (CheckValue(board, row, col, num)) {
+            board[row][col] = num;
+            Solve(board);
         }
     }
 
-    return false;
-};
+    if (FindEmpty(board)[0] !== -1)
+        board[row][col] = 0;
+
+    
+    return board;
+}
