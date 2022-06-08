@@ -25,5 +25,10 @@ Sudoku Solver Project using Bakctracking Algorithm
    
    # Objectives left to do
     - Explain my backtracking approuch in the README.md
-    - Change state saved sudoku to new sudoku approuch
-    - have solve method save to state, so to see the backtracking method work live on page  
+    - have solve method save to state, so to see the backtracking method work live on page 
+    - need to provide index somehow on SudokuCell to be able to save to state properly
+    - cell breifly flashes red if number inputed cannot be placed there
+    - cell breifly flashes green if number is valid
+    - style everything
+    - add keys to all cell
+    - add favicon
