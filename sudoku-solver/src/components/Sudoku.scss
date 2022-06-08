@@ -4,7 +4,7 @@
     text-align: center;
     font-size: 1.3rem;
 
-    background-color: #999;
+    background-color: white;
     color: #444;
 }
 
@@ -14,12 +14,13 @@
 
 .row:nth-child(-n + 3), .row:nth-child(n + 7) {
     :nth-child(-n + 3), :nth-child(n + 7) {
-        background-color: white;
+        background-color: rgb(136, 223, 230);
+        
     }
 }
 
 .row:nth-child(n + 4):nth-child(-n + 6) {
     :nth-child(n + 4):nth-child(-n + 6) {
-        background-color: white;
+        background-color: rgb(136, 223, 230);
     }
 }
