@@ -5,7 +5,7 @@ import { SudokuContext } from '../context/SudokuContext';
 import "./Sudoku.scss";
 
 const SudokuBoard = () => {
-    const { sudoku } = useContext(SudokuContext);
+    const { sudoku, solved } = useContext(SudokuContext);
 
     return (
         <div className='board' >
@@ -16,7 +16,7 @@ const SudokuBoard = () => {
                     ))}
                 </div>
             ))} */}
-            {console.log(sudoku)}
+
             {sudoku.map(row => (
                 <div className='row' >
                     {row.map(cell => (
@@ -26,6 +26,7 @@ const SudokuBoard = () => {
                     ))}
                 </div>
             ))}
+            {solved ? <h5>Congrats, Sovled!</h5> : null}
         </div>
     )
 };

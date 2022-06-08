@@ -73,7 +73,8 @@ const SudokuReducer = (state, action) => {
             }
         case "SOLVE_BOARD":
             return {
-                sudoku: action.payload
+                sudoku: action.payload,
+                solved: true
             }
         default:
             return state;
