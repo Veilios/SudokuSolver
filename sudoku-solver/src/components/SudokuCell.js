@@ -7,24 +7,29 @@ const SudokuCell = (props) => {
     const { dispatch, sudoku } = useContext(SudokuContext);
     
 
-    const handleChange = (e) => {   
-        const newBoard = sudoku
+    // const handleChange = (e) => {   
+    //     const nBoard = sudoku;
 
-        newBoard.rows[props.cell.row].cols[props.cell.col].value = e.target.value;
+    //     // nBoard[props.row][props.index].value = e.target.value;
 
-        dispatch({
-            type: "FILL_CELL",
-            payload: newBoard
-        })
-    };
+    //     // dispatch({
+    //     //     type: "FILL_CELL",
+    //     //     payload: nBoard
+    //     // });
+
+    //     console.log("idk", props.row)
+
+    // };
 
     return (
+        <>
         <input
             className='cell'
-            value={props.cell.value}
-            readOnly={props.cell.readonly}
-            onChange={handleChange}
+            value={props.cell === 0 ? "" : props.cell}
+            readOnly={true} // {props.cell === 0 ? false : true}
+            // onChange={handleChange}
         />
+        </>
     )
 };
 
