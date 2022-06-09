@@ -13,12 +13,10 @@ const SudokuBoard = () => {
     return (
         <div className='board' >
             {sudoku.map(row => (
-                <div className='row' >
-                    {row.map(function (cell, index) {
-                        return (
-                            <SudokuCell className="cell" cell={cell} row={sudoku.indexOf(row)} key={(sudoku.indexOf(row)) + index} />
-                        )
-                    })}
+                <div className='row' key={uuidv4()}>
+                    {row.map(cell => (
+                        <SudokuCell className="cell" cell={cell} row={sudoku.indexOf(row)} key={uuidv4()} />
+                    ))}
                 </div>
             ))}
             {solved ? <h5>Congrats, Sovled!</h5> : null}

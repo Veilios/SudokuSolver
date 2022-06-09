@@ -29,4 +29,3 @@ Sudoku Solver Project using Bakctracking Algorithm
     - need to provide index somehow on SudokuCell to be able to save to state properly
     - cell breifly flashes red if number inputed cannot be placed there
     - cell breifly flashes green if number is valid
-    - add keys to all cell
