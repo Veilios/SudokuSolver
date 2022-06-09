@@ -12,9 +12,9 @@ export const Solve = (board) => {
         return board;
     }
 
-    for (let num = 1; num <= 9; num++) {
-        if (CheckValue(board, row, col, num)) {
-            board[row][col] = num;
+    for (let value = 1; value <= 9; value++) {
+        if (CheckValue(board, row, col, value)) {
+            board[row][col] = value;
             Solve(board);
         }
     }
