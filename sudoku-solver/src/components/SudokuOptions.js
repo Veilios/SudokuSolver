@@ -4,6 +4,7 @@ import { SudokuContext } from '../context/SudokuContext';
 import { generateSudoku } from '../context/SudokuContext';
 import { Solve } from '../hooks/Solve';
 
+
 const SudokuOptions = () => {
     const { dispatch, sudoku } = useContext(SudokuContext);
 
@@ -13,7 +14,7 @@ const SudokuOptions = () => {
         dispatch({
             type: "NEW_BOARD",
             payload: n
-        })
+        });
     };
 
     const answer = () => {
@@ -22,7 +23,7 @@ const SudokuOptions = () => {
         dispatch({
             type: "SOLVE_BOARD",
             payload: bo
-        })
+        });
     };
 
     return (
@@ -30,7 +31,7 @@ const SudokuOptions = () => {
             <button onClick={() => newBoard()} >New board</button>
             <button onClick={() => answer()} >Solve with Backtracking</button>
         </div>
-    )
+    );
 };
 
 export default SudokuOptions;

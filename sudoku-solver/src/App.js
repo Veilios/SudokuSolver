@@ -17,7 +17,7 @@ const App = () => {
         <SudokuOptions />
       </div>
     </SudokuProvider>
-  )
+  );
 };
 
 export default App;

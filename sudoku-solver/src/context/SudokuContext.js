@@ -33,7 +33,7 @@ export const generateSudoku = () => {
 
     Seperator(raw, 9);
 
-    return sBoard
+    return sBoard;
 };
 
 
@@ -42,20 +42,20 @@ const SudokuReducer = (state, action) => {
         case "FILL_CELL":
             return {
                 sudoku: action.payload
-            }
+            };
         case "NEW_BOARD":
             return {
                 sudoku: action.payload
-            }
+            };
         case "SOLVE_BOARD":
             return {
                 sudoku: action.payload,
                 solved: true
-            }
+            };
         case "BACKTRACK":
             return {
                 sudoku: action.payload
-            }
+            };
         default:
             return state;
     }
@@ -66,7 +66,7 @@ const initialState = {
     solved: false
 };
 
-export const SudokuContext = createContext()
+export const SudokuContext = createContext();
 
 
 export const SudokuProvider = (props) => {
@@ -80,5 +80,5 @@ export const SudokuProvider = (props) => {
         }} >
             {props.children}
         </SudokuContext.Provider>
-    )
+    );
 };
