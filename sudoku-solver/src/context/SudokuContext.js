@@ -37,30 +37,6 @@ export const generateSudoku = () => {
 };
 
 
-// export const generateSudoku = () => {
-//     const raw = generator.makepuzzle();
-//     const result = { rows: [] };
-
-//     for (let i = 0; i < 9; i++) {
-//         const row = { cols: [], index: i };
-//         for (let j = 0; j < 9; j++) {
-//             const value = raw[i * 9 + j];
-//             const col = {
-//                 row: i,
-//                 col: j,
-//                 value: value === null ? "" : value + 1,
-//                 readonly: value !== null
-//             };
-
-//             row.cols.push(col);
-//         };
-
-//         result.rows.push(row);
-//     };
-
-//     return result;
-// };
-
 const SudokuReducer = (state, action) => {
     switch (action.type) {
         case "FILL_CELL":
@@ -75,6 +51,10 @@ const SudokuReducer = (state, action) => {
             return {
                 sudoku: action.payload,
                 solved: true
+            }
+        case "BACKTRACK":
+            return {
+                sudoku: action.payload
             }
         default:
             return state;

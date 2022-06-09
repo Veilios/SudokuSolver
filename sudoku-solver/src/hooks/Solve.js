@@ -1,13 +1,14 @@
-import { CheckValue } from "./Check/CheckValue";
+import { CheckValue } from "./CheckValue";
 import { FindEmpty } from "./FindEmpty";
+
+
 
 export const Solve = (board) => {
     let emptySpot = FindEmpty(board);
     let row = emptySpot[0];
     let col = emptySpot[1];
 
-    // there is no more empty spots
-    if (row === -1) {
+    if (row === -1) {    // Board is solved
         return board;
     }
 
