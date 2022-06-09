@@ -23,12 +23,10 @@ Sudoku Solver Project using Bakctracking Algorithm
    Fill the entire board with numbers in every sqaure, without repeating any numbers in the same row, column, and sub sqaure.
    This makes the entire board valid/solved.
    
-   # Objectives left to do
+   # Future features
     - Explain my backtracking approuch in the README.md
     - have solve method save to state with every new cell, so to see the backtracking method work live on page 
     - need to provide index somehow on SudokuCell to be able to save to state properly
     - cell breifly flashes red if number inputed cannot be placed there
     - cell breifly flashes green if number is valid
-    - style everything
     - add keys to all cell
-    - add favicon
