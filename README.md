@@ -33,7 +33,7 @@ Sudoku Solver Project using Bakctracking Algorithm
     and sub sqaure and deciding what number, 1 - 9, can be placed in that cell, without breaking the constraints.
     If no duplicates of that number are found, it will be placed in that cell for the time being. 
     Going through the entire board, eventually it can reach a cell where no numbers work, 
-    in which case it will backtrack to the lastknown cell that was altered, and repeating the process with the next valid number.
+    in which case it will backtrack to the last known cell that was altered, and repeating the process with the next valid number.
 
     I use an API called sudoku, to generate a valid board, so I do not need to check if a board is solvable or not.
 

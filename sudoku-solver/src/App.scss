@@ -1,10 +1,15 @@
+body {
+    background-color: rgb(196, 177, 174);
+}
+
 .App {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+    overflow: auto;
 }
 
 h1 {

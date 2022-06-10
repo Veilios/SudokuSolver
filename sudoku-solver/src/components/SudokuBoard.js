@@ -8,7 +8,7 @@ import "./Sudoku.scss";
 
 
 const SudokuBoard = () => {
-    const { sudoku, solved } = useContext(SudokuContext);
+    const { sudoku } = useContext(SudokuContext);
 
     return (
         <div className='board' >
@@ -19,7 +19,6 @@ const SudokuBoard = () => {
                     ))}
                 </div>
             ))}
-            {solved ? <h5>Congrats, Sovled!</h5> : null}
         </div>
     );
 };

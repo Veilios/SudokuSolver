@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import confetti from "canvas-confetti";
 
 import { SudokuContext } from '../context/SudokuContext';
 import { generateSudoku } from '../context/SudokuContext';
@@ -7,6 +8,17 @@ import { Solve } from '../hooks/Solve';
 
 const SudokuOptions = () => {
     const { dispatch, sudoku } = useContext(SudokuContext);
+
+    const Congrats = () => {
+        confetti({
+            particleCount: 150,
+            spread: 100,
+            origin: {
+                x: 0.5,
+                y: 0.9
+            }
+        });
+    }
 
     const newBoard = () => {
         const n = generateSudoku();
@@ -19,6 +31,8 @@ const SudokuOptions = () => {
 
     const answer = () => {
         const bo = Solve(sudoku);
+        Congrats();
+        console.log(Math.random())
 
         dispatch({
             type: "SOLVE_BOARD",
