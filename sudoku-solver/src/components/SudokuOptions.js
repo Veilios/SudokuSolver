@@ -15,7 +15,7 @@ const SudokuOptions = () => {
             spread: 100,
             origin: {
                 x: 0.5,
-                y: 0.9
+                y: 1
             }
         });
     }
